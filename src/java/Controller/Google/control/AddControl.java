@@ -2,15 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package control;
+package Controller.Google.control;
 
+import context.DBContext;
 import dao.DAO;
 import entity.Accounts;
-import entity.Category;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author admin
  */
-public class ManagerControl extends HttpServlet {
+public class AddControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,16 +33,34 @@ public class ManagerControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+        DBContext.setConnection();
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String image = request.getParameter("image");
+        String price = request.getParameter("price");
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        String cateID = request.getParameter("category");
+       
+        
         HttpSession session = request.getSession();
         Accounts accounts = (Accounts) session.getAttribute("acc");
         String user = accounts.getUser();
+
+        String sid = accounts.getUser();
+        System.out.println(name);
+        System.out.println(image);
+        System.out.println(price);
+        System.out.println(title);
+        System.out.println(description);
+        System.out.println(cateID);
+
         DAO dao = new DAO();
-        List<Product> list = dao.getProductByUser(user);
-        List<Category> listC = dao.getAllCategory();
-        request.setAttribute("listCC", listC);
-        request.setAttribute("listP", list);
-        request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
+        Product product = new Product(0, name, image, 0, title, description, cateID, sid, image, image, image, image, image, user);
+        dao.createPost(name, image, price, title, description, cateID, user);
+        
+        response.sendRedirect("manager");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

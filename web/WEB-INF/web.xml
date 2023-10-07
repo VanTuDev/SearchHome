@@ -5,19 +5,19 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>LogoutControl</servlet-name>
-        <servlet-class>control.LogoutControl</servlet-class>
+        <servlet-class>Controller.Google.control.LogoutControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManagerControl</servlet-name>
-        <servlet-class>control.ManagerControl</servlet-class>
+        <servlet-class>Controller.Google.control.ManagerControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteControl</servlet-name>
-        <servlet-class>control.DeleteControl</servlet-class>
+        <servlet-class>Controller.Google.control.DeleteControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddControl</servlet-name>
-        <servlet-class>control.AddControl</servlet-class>
+        <servlet-class>Controller.Google.control.AddControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutControl</servlet-name>

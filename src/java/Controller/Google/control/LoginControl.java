@@ -1,4 +1,4 @@
-package control;
+package Controller.Google.control;
 
 import context.DBContext;
 import dao.DAO;

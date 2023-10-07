@@ -2,15 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package control;
+package Controller.Google.control;
 
-import context.DBContext;
 import dao.DAO;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,20 +17,25 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author admin
  */
-@WebServlet(name = "DetailControl", urlPatterns = {"/detail"})
-public class DetailControl extends HttpServlet {
-void processRequest(HttpServletRequest request, HttpServletResponse response)
+public class DeleteControl extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        DBContext.setConnection();
-        String id = request.getParameter("pid");
-        // Kiểm tra id có giá trị hợp lệ và tồn tại trong cơ sở dữ liệu
+        String id = request.getParameter("id");
         DAO dao = new DAO();
-        Product p = dao.getProductByID(id);
-
-        // Đặt thuộc tính "detail" trong request
-        request.setAttribute("detail", p);
-        request.getRequestDispatcher("detail.jsp").forward(request, response);
+        dao.deletePost(id);
+        System.out.println(id);
+        response.sendRedirect("manager");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

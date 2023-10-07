@@ -1,4 +1,4 @@
-package Google;
+package Controller.Google;
 
 
 import com.google.gson.Gson;

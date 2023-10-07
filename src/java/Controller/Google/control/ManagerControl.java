@@ -2,10 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package control;
+package Controller.Google.control;
 
+import dao.DAO;
+import entity.Accounts;
+import entity.Category;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +19,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Alpha
+ * @author admin
  */
-public class LogoutControl extends HttpServlet {
+public class ManagerControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,11 +33,17 @@ public class LogoutControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        session.removeAttribute("acc");
-        response.sendRedirect("home.jsp");
+        Accounts accounts = (Accounts) session.getAttribute("acc");
+        String user = accounts.getUser();
+        DAO dao = new DAO();
+        List<Product> list = dao.getProductByUser(user);
+        List<Category> listC = dao.getAllCategory();
+        request.setAttribute("listCC", listC);
+        request.setAttribute("listP", list);
+        request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -46,7 +57,7 @@ public class LogoutControl extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -60,7 +71,7 @@ public class LogoutControl extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         processRequest(request, response);
     }
 

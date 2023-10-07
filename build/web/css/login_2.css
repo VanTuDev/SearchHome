@@ -1,0 +1,327 @@
+login.css
+/* sign in FORM */
+#logreg-forms{
+    width:412px;
+    margin:10vh auto;
+    background-color:#f3f3f3;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+#logreg-forms form {
+    width: 100%;
+    max-width: 410px;
+    padding: 15px;
+    margin: auto;
+}
+#logreg-forms .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+#logreg-forms .form-control:focus { z-index: 2; }
+#logreg-forms .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#logreg-forms .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#logreg-forms .social-login{
+    width:390px;
+    margin:0 auto;
+    margin-bottom: 14px;
+}
+#logreg-forms .social-btn{
+    font-weight: 100;
+    color:white;
+    width:190px;
+    font-size: 0.9rem;
+}
+
+#logreg-forms a{
+    display: block;
+    padding-top:10px;
+    color:lightseagreen;
+}
+
+#logreg-form .lines{
+    width:200px;
+    border:1px solid red;
+}
+
+
+#logreg-forms button[type="submit"]{ margin-top:10px; }
+
+#logreg-forms .facebook-btn{  background-color:#3C589C; }
+
+#logreg-forms .google-btn{ background-color: #DF4B3B; }
+
+#logreg-forms .form-reset, #logreg-forms .form-signup{ display: none; }
+
+#logreg-forms .form-signup .social-btn{ width:210px; }
+
+#logreg-forms .form-signup input { margin-bottom: 2px;}
+
+.form-signup .social-login{
+    width:210px !important;
+    margin: 0 auto;
+}
+
+/* Mobile */
+
+@media screen and (max-width:500px){
+    #logreg-forms{
+        width:300px;
+    }
+    
+    #logreg-forms  .social-login{
+        width:200px;
+        margin:0 auto;
+        margin-bottom: 10px;
+    }
+    #logreg-forms  .social-btn{
+        font-size: 1.3rem;
+        font-weight: 100;
+        color:white;
+        width:200px;
+        height: 56px;
+        
+    }
+    #logreg-forms .social-btn:nth-child(1){
+        margin-bottom: 5px;
+    }
+    #logreg-forms .social-btn span{
+        display: none;
+    }
+    #logreg-forms  .facebook-btn:after{
+        content:'Facebook';
+    }
+  
+    #logreg-forms  .google-btn:after{
+        content:'Google+';
+    }
+    
+}
+:root {
+    --heavy-color: #306FC2;
+    --light-color: #70CEE9;
+    --font-color-light: white;
+    --hover-color: #69a5f4;
+    --font-color: #415775;
+    --background-color: #EAF3FF;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+    color: var(--font-color);
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: none;
+}
+
+a {
+    color: var(--font-color);
+}
+
+/* index */
+.text-center {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.row-header input {
+    width: 520px;
+    border-radius: 5px;
+}
+
+select {
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: #151b49;
+    border-style: unset;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--heavy-color);
+    background-color: var(--light-color);
+    border: 0;
+    font-size: larger;
+}
+
+span {
+    padding: 0px 5px 0px 5px;
+}
+
+.content {
+    padding: 10px;
+}
+
+.footer {
+    background-color: var(--light-color);
+    margin: 0px;
+    padding: 20px 0px 0px 0px;
+    box-sizing: content-box;
+}
+
+.foot-content {
+    display: flex;
+    justify-content: center;
+}
+
+/* login */
+
+.login-content {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    box-sizing: content-box;
+    margin: 50px auto 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 0px black;
+}
+
+.back button{
+    background-color: var(--background-color);
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-button {
+    width: 110px;
+    height: 39px;
+    background-color: var(--heavy-color);
+    color: var(--font-color-light);
+}
+
+.login-button:hover{
+    background-color: var(--hover-color);
+    color: var(--font-color-light);
+    border-color: var(--hover-color);
+}
+
+.register-form {
+    margin-top: 10px;
+    display: flex;
+}
+
+.register-form a:hover {
+    color: var(--light-color) !important;
+}
+
+.register-form a,
+.register-form a:hover {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    /* height: 55px; */
+    padding: 0px;
+    border: 0px;
+    margin:0px 10px 0px 10px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+.rem-for {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.forgot-pass a {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    border-color: var(--background-color);
+}
+
+.forgot-pass a:hover {
+    color: var(--light-color);
+    background-color: var(--background-color);
+    border-color: var(--background-color);
+}
+
+.form-group {
+    margin: 0px;
+}
+
+.product-card {
+    width: 320px;
+    height: 310px;
+}
+
+.btn-danger {
+    border-color: var(--light-color);
+    background-color: var(--light-color);
+    color: var(--font-color);
+}
+
+.btn-danger:hover {
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+    color: var(--background-color);
+}
+
+.btn-success {
+    border-color: var(--heavy-color);
+    background-color: var(--heavy-color);
+    color: var(--background-color);
+}
+
+.btn-success:hover {
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+    color: var(--background-color);
+}
+
+.breadcrumb {
+    margin: 0px;
+    background-color: white;
+    padding: 5px;
+}
+
+.form-check-input {
+    position: absolute;
+    bottom:5px;
+    left: 35px;
+}   

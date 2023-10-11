@@ -105,9 +105,8 @@
                 <div class="collapse navbar-collapse" id="Navbar">
                     <c:if test="${sessionScope.acc.roles == 3}">
                         <ul class="navbar-nav mr-auto ">
-                            <li class="nav-item active"><a class="nav-link" href="#">
+                            <li class="nav-item active"><a class="nav-link" href="managerAcc">
                                     Quản lý tài khoản</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Quản lý bài đăng</a></li>
                         </ul>
                     </c:if>
                     <c:if test="${sessionScope.acc.roles == 2}">
@@ -118,11 +117,57 @@
                             <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Phòng
                                     trọ</a></li>
                         </ul>
-                        <a class="nav-text" href="manager">Quản lý bài đăng</a>
+                        <a class="nav-link" href="manager">Quản lý bài đăng</a>
                         <ul class="navbar-nav">
-                            <li class="nav-text"><a class="nav-link" href="#">
-                                    Đăng bài</a></li>
+                            <li class="nav-text"><a href="#addEmployeeModal" data-toggle="modal"><span>Đăng bài</span></a></li>
                         </ul>
+                        <div id="addEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="add" method="post">
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Đăng bài</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <div class="form-group">
+                                                <label>Tiêu đề</label>
+                                                <input name="name" type="text" class="form-control" placeholder="Tiêu đề bài viết..." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ảnh</label>
+                                                <input name="image" type="text" class="form-control" placeholder="Thêm link ảnh..." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Giá thành</label>
+                                                <input name="prices" type="text" class="form-control" placeholder="Thêm giá phòng" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Địa chỉ</label>
+                                                <textarea name="title" class="form-control" placeholder="Thêm địa chỉ của phòng/căn hộ..." required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mô tả</label>
+                                                <textarea name="description" class="form-control" placeholder="Thêm mô tả chi tiết..." required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Loại</label>
+                                                <select name="category" class="form-select" aria-label="Default select example">
+                                                    <c:forEach items="${listCC}" var="o">
+                                                        <option value="${o.cid}">${o.cname}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <input type="submit" class="btn btn-success" value="Đăng">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </c:if>
                     <c:if test="${sessionScope.acc.roles == 1}">
                         <ul class="navbar-nav mr-auto ">
@@ -133,7 +178,7 @@
                                     trọ</a></li>
                         </ul>
                     </c:if>
-                   <!-- login sign up -->
+                    <!-- login sign up -->
                     <!--<span class="navbar-text">
                         <h5>Hello + }</h5>
                         </span>-->
@@ -146,7 +191,7 @@
                                     trọ</a></li>
                         </ul>
                         <span class="navbar-text">
-                            <a href="#" style="color:gray">Guest</a>
+                            <a href="#" style="color:gray">Tài khoản khách</a>
                         </span>
                         <span class="navbar-text">
                             <a href="login.jsp">Login</a>
@@ -332,6 +377,54 @@
             </div>
         </div>
     </footer>
+    <!--Đăng bài-->
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="add" method="post">
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Đăng bài</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                        <div class="form-group">
+                            <label>Tiêu đề</label>
+                            <input name="name" type="text" class="form-control" placeholder="Tiêu đề bài viết..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ảnh</label>
+                            <input name="image" type="text" class="form-control" placeholder="Thêm link ảnh..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Giá thành</label>
+                            <input name="prices" type="text" class="form-control" placeholder="Thêm giá phòng" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <textarea name="title" class="form-control" placeholder="Thêm địa chỉ của phòng/căn hộ..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Mô tả</label>
+                            <textarea name="description" class="form-control" placeholder="Thêm mô tả chi tiết..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại</label>
+                            <select name="category" class="form-select" aria-label="Default select example">
+                                <c:forEach items="${listCC}" var="o">
+                                    <option value="${o.cid}">${o.cname}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Đăng">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

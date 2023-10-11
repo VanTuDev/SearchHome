@@ -31,24 +31,24 @@ public class DAO {
 
             while (rs.next()) {
                 listAccounts.add(new Accounts(
-                    rs.getString(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getString(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14),
-                    rs.getString(15),
-                    rs.getString(16),
-                    rs.getString(17),
-                    rs.getString(18)));
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16),
+                        rs.getString(17),
+                        rs.getString(18)));
 
             }
         } catch (Exception ex) {
@@ -62,7 +62,7 @@ public class DAO {
 //    public static void main(String[] args) {
 //        DBContext.setConnection();
 //        DAO dao = new DAO();
-//        List<Accounts> listAccounts = dao.selectAllAccounts();
+//        ArrayList<Accounts> listAccounts = dao.getAllAccount();
 //        for (Accounts accounts : listAccounts) {
 //            System.out.println(accounts);
 //
@@ -77,20 +77,55 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getDouble(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14)
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14)
                 ));
+            }
+            // in ra lỗi nếu không thể seclect table "product"
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return list;
+    }
+
+    public ArrayList<Accounts> getAllAccount() {
+        ArrayList<Accounts> list = new ArrayList<>();
+        String query = "Select * from Accounts";
+
+        try {
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Accounts(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16),
+                        rs.getString(17),
+                        rs.getString(18)));
             }
             // in ra lỗi nếu không thể seclect table "product"
         } catch (Exception ex) {
@@ -117,7 +152,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Category(rs.getInt(1),
-                    rs.getString(2)));
+                        rs.getString(2)));
             }
             // in ra lỗi nếu không thể seclect table "Category"
         } catch (Exception ex) {
@@ -145,7 +180,7 @@ public class DAO {
     public Product getLast() {
 
         String query = " select top 1 *  from product\n"
-            + "order by id desc ";
+                + "order by id desc ";
 
         try {
 
@@ -154,19 +189,19 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Product(rs.getInt(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getDouble(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14)
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14)
                 );
             }
         } catch (Exception ex) {
@@ -189,19 +224,19 @@ public class DAO {
 
                 while (rs.next()) {
                     list.add(new Product(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getDouble(4),
+                            rs.getString(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            rs.getString(9),
+                            rs.getString(10),
+                            rs.getString(11),
+                            rs.getString(12),
+                            rs.getString(13),
+                            rs.getString(14)
                     ));
                 }
             } else {
@@ -227,19 +262,19 @@ public class DAO {
 
                 while (rs.next()) {
                     list.add(new Product(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getDouble(4),
+                            rs.getString(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            rs.getString(9),
+                            rs.getString(10),
+                            rs.getString(11),
+                            rs.getString(12),
+                            rs.getString(13),
+                            rs.getString(14)
                     ));
                 }
             } else {
@@ -284,7 +319,7 @@ public class DAO {
         ps = null;
         try {
             String query = "DELETE from product \n"
-                + " WHERE id = ?";
+                    + " WHERE id = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, id);
             System.out.println(query);
@@ -327,7 +362,6 @@ public class DAO {
 //            ex.printStackTrace();
 //        }
 //    }
-
 //    public static void main(String[] args) {
 //        DBContext.setConnection();
 //        // Create a Product object with the necessary data
@@ -349,11 +383,10 @@ public class DAO {
 //        System.out.println("Product inserted successfully.");
 //        DBContext.closeConnection();
 //    }
-
     public void createPost(String name, String image, String price, String title, String description, String cateId, String user) {
         String query = "INSERT INTO [Wish].[dbo].[product] \n"
-            + "([name],[image],[price],[title],[description],[cateID],[user])\n"
-            + "VALUES (?,?,?,?,?,?,?)";
+                + "([name],[image],[price],[title],[description],[cateID],[user])\n"
+                + "VALUES (?,?,?,?,?,?,?)";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -377,18 +410,63 @@ public class DAO {
 //        Product id = new Product();
 //        id.setId(24);
 //        DAO dao = new DAO();
-//        int ketQua = dao.deletePost("24");
+//        int ketQua = dao.editPost("Nhà đẹp thiệt màaa", "https://thietkexaynhadep.com.vn/upload/images/bt474/mau-biet-thu-2-tang-dep-mai-nhat-bt474-1.jpg", "25,00", "Quận Ngũ Hành Sơn", "Nhà đẹp thiệt á, ghé qua coi xí thhui", "2", "3");
 //        if (ketQua > 0) {
-//            System.out.println("Xóa tác giả thành công");
+//            System.out.println("Thay đổi bài viết thành công");
 //        } else {
-//            System.out.println("Xóa tác giả thất bại hoặc không tìm thấy tác giả");
+//            System.out.println("Thay đổi bài viết thất bại hoặc không tìm thấy bài viết");
 //        }
 //        DBContext.closeConnection();
 //    }
+
+    
+
+    public void editPost(String name, String image, String price, String title, String description, String cateId, String id) {
+        String query = "update product \n"
+                + "set \n"
+                + "[name] = ?,\n"
+                + "[image] = ?,\n"
+                + "price = ?,\n"
+                + "title = ?,\n"
+                + "[description] = ?,\n"
+                + "cateID = ?\n"
+                + "where id = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, title);
+            ps.setString(5, description);
+            ps.setString(6, cateId);
+            ps.setString(7, id);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void main(String[] args) {
+        String name = "New Product";
+        String image = "new_image.jpg";
+        String price = "19.99";
+        String title = "Updated Title";
+        String description = "Updated Description";
+        String cateId = "1";
+        String id = "8";
+
+        // Create an instance of the class containing the editPost method
+        DAO dao = new DAO();
+
+        // Call the editPost method with the provided arguments
+        dao.editPost(name, image, price, title, description, cateId, id);
+    }
+    
     public Product getProductByID(String id) {
 
         String query = "select *from product\n"
-            + " where id = ?";
+                + " where id = ?";
 
         try {
             Connection conn = DBContext.getConnection();
@@ -397,15 +475,15 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Product(rs.getInt(1), rs.getString(2),
-                    rs.getString(3), rs.getInt(4), rs.getString(5),
-                    rs.getString(6), rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14));
+                        rs.getString(3), rs.getInt(4), rs.getString(5),
+                        rs.getString(6), rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14));
             }
             // in ra lỗi nếu không thể seclect table "product"
         } catch (Exception ex) {
@@ -448,8 +526,8 @@ public class DAO {
 //    }
     public Accounts login(String user, String pass) {
         String query = "select * from accounts\n"
-            + " where [user] = ?\n"
-            + " and pass = ?";
+                + " where [user] = ?\n"
+                + " and pass = ?";
         try {
             Connection conn = DBContext.getConnection();
             ps = conn.prepareStatement(query);
@@ -459,23 +537,23 @@ public class DAO {
 
             while (rs.next()) {
                 return new Accounts(rs.getString(1),
-                    rs.getString(1),
-                    rs.getString(3),
-                    rs.getString(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14),
-                    rs.getString(15),
-                    rs.getString(16),
-                    rs.getString(17),
-                    rs.getString(18));
+                        rs.getString(1),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16),
+                        rs.getString(17),
+                        rs.getString(18));
 
             }
         } catch (Exception ex) {
@@ -509,7 +587,7 @@ public class DAO {
         PreparedStatement ps = null;
         try {
             String query = "select * from accounts\n"
-                + " where [user] = ?\n";
+                    + " where [user] = ?\n";
 
             conn = DBContext.getConnection();
             ps = conn.prepareStatement(query);
@@ -517,23 +595,23 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Accounts(rs.getString(1),
-                    rs.getString(1),
-                    rs.getString(3),
-                    rs.getString(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9),
-                    rs.getString(10),
-                    rs.getString(11),
-                    rs.getString(12),
-                    rs.getString(13),
-                    rs.getString(14),
-                    rs.getString(15),
-                    rs.getString(16),
-                    rs.getString(17),
-                    rs.getString(18));
+                        rs.getString(1),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16),
+                        rs.getString(17),
+                        rs.getString(18));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -565,7 +643,7 @@ public class DAO {
         try {
             conn = DBContext.getConnection();
             String query = "  INSERT INTO accounts ([user],fullname,gender,gmail,pass,roles,numphone,cccd,dot,wot)\n"
-                + "  VALUES (?,?,?,?,?,?,?,?,?,?)";
+                    + "  VALUES (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, accounts.getUser());
             ps.setString(2, accounts.getFullname());
@@ -630,7 +708,7 @@ public class DAO {
         try {
             conn = DBContext.getConnection();
             String query = "  INSERT INTO favaritepost (idfavorite, idpost, user,\n"
-                + "  VALUES (?,?,?)";
+                    + "  VALUES (?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, accounts.getUser());
             ps.setString(2, accounts.getFullname());
@@ -664,9 +742,9 @@ public class DAO {
 
             conn = DBContext.getConnection();
             String query = "UPDATE accounts"
-                + "SET " + "maxacthuc = ?"
-                + ",thoigianhieuluccuamaxacthuc"
-                + ",trangthaixacthuc" + "WHERE user";
+                    + "SET " + "maxacthuc = ?"
+                    + ",thoigianhieuluccuamaxacthuc"
+                    + ",trangthaixacthuc" + "WHERE user";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, accounts.getMaxacthuc());
             ps.setString(2, accounts.getThoigianhieuluccuamaxacthuc());

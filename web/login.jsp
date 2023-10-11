@@ -15,7 +15,7 @@
 <body>
     <div class="login-content container">
         <div class="back container-fluid">
-            <button type="button"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="20"
+            <button type="button"><a href="home.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="20"
                         viewBox="0 0 23 40" fill="none">
                         <line x1="1.56548" y1="21.3374" x2="20.7337" y2="1.6064" stroke="black" stroke-width="5" />
                         <line x1="1.39361" y1="18.5655" x2="21.1246" y2="37.7337" stroke="black" stroke-width="5" />

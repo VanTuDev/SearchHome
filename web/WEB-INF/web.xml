@@ -31,6 +31,10 @@
         <servlet-name>EditControl</servlet-name>
         <servlet-class>Controller.Google.control.EditControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteAccountControl</servlet-name>
+        <servlet-class>Controller.Google.control.DeleteAccountControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutControl</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -58,6 +62,10 @@
     <servlet-mapping>
         <servlet-name>EditControl</servlet-name>
         <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAccountControl</servlet-name>
+        <url-pattern>/deleteAcc</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

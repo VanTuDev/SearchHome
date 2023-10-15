@@ -34,8 +34,8 @@
                         <div class="back container-fluid">
                             <button type="button"><a href="home.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="20"
                                                                           viewBox="0 0 23 40" fill="none">
-                                    <line x1="1.56548" y1="21.3374" x2="20.7337" y2="1.6064" stroke="black" stroke-width="5" />
-                                    <line x1="1.39361" y1="18.5655" x2="21.1246" y2="37.7337" stroke="black" stroke-width="5" />
+                                    <line x1="1.56548" y1="21.3374" x2="20.7337" y2="1.6064" stroke="white" stroke-width="5" />
+                                    <line x1="1.39361" y1="18.5655" x2="21.1246" y2="37.7337" stroke="white" stroke-width="5" />
                                     </svg></a></button>
                         </div>
                         <div class="col-sm-6">
@@ -58,9 +58,9 @@
                             <th>User</th>
                             <th>Name</th>
                             <th>Image</th>
-                            <th>Number Phone</th>
+                            <th>Number phone</th>
                             <th>Gmail</th>
-                            <th>Post</th>
+                            <th>Owner post</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -80,10 +80,10 @@
                                 </td>
                                 <td>${o.numphone}</td>
                                 <td>${o.gmail}</td>
-                                <td>
+                                <td><a href="manager" data-toggle="modal"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                                 <td>
                                     <a href="#editEmployeeModal"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="delete?id=${o.user}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    <a href="deleteAcc?id=${o.user}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
                             </tr>
                         </c:forEach>

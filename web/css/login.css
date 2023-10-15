@@ -176,11 +176,10 @@ select {
 button {
     display: flex;
     align-items: center;
-    border-radius: 5px;
     color: var(--heavy-color);
     background-color: var(--light-color);
     border: 0;
-    font-size: larger;
+    justify-content: center;
 }
 
 span {

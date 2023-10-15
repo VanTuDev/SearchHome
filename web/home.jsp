@@ -105,7 +105,7 @@
                 <div class="collapse navbar-collapse" id="Navbar">
                     <c:if test="${sessionScope.acc.roles == 3}">
                         <ul class="navbar-nav mr-auto ">
-                            <li class="nav-item active"><a class="nav-link" href="managerAcc">
+                            <li class="nav-item"><a class="nav-link" href="managerAcc">
                                     Quản lý tài khoản</a></li>
                         </ul>
                     </c:if>

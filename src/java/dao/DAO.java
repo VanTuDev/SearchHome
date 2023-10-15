@@ -133,6 +133,23 @@ public class DAO {
         }
         return list;
     }
+    
+    public int deleteAccounts(String user) {
+        int ketQua = 0;
+        ps = null;
+        try {
+            String query = "delete from Accounts where [user] = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            System.out.println(query);
+            ketQua = ps.executeUpdate();
+            System.out.println("Bạn đã thực thi: " + query);
+            System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return ketQua;
+    }
 
     //test đã đẩy dữ liệu từ sql Products lên chưa
 //    public static void main(String[] args) {
@@ -323,9 +340,7 @@ public class DAO {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, id);
             System.out.println(query);
-            ketQua = ps.executeUpdate();
-            System.out.println("Bạn đã thực thi: " + query);
-            System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+            ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -447,21 +462,21 @@ public class DAO {
         }
     }
     
-    public static void main(String[] args) {
-        String name = "New Product";
-        String image = "new_image.jpg";
-        String price = "19.99";
-        String title = "Updated Title";
-        String description = "Updated Description";
-        String cateId = "1";
-        String id = "8";
-
-        // Create an instance of the class containing the editPost method
-        DAO dao = new DAO();
-
-        // Call the editPost method with the provided arguments
-        dao.editPost(name, image, price, title, description, cateId, id);
-    }
+//    public static void main(String[] args) {
+//        String name = "New Product";
+//        String image = "new_image.jpg";
+//        String price = "19.99";
+//        String title = "Updated Title";
+//        String description = "Updated Description";
+//        String cateId = "1";
+//        String id = "8";
+//
+//        // Create an instance of the class containing the editPost method
+//        DAO dao = new DAO();
+//
+//        // Call the editPost method with the provided arguments
+//        dao.editPost(name, image, price, title, description, cateId, id);
+//    }
     
     public Product getProductByID(String id) {
 

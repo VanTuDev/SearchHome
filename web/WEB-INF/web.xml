@@ -5,19 +5,19 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>LogoutControl</servlet-name>
-        <servlet-class>Controller.Google.control.LogoutControl</servlet-class>
+        <servlet-class>Controller.LogoutControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManagerControl</servlet-name>
-        <servlet-class>Controller.Google.control.ManagerControl</servlet-class>
+        <servlet-class>Controller.ManagerControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteControl</servlet-name>
-        <servlet-class>Controller.Google.control.DeleteControl</servlet-class>
+        <servlet-class>Controller.DeleteControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddControl</servlet-name>
-        <servlet-class>Controller.Google.control.AddControl</servlet-class>
+        <servlet-class>Controller.AddControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutControl</servlet-name>
@@ -34,6 +34,22 @@
     <servlet-mapping>
         <servlet-name>AddControl</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>loadPostControl</servlet-name>
+        <servlet-class>Controller.Google.control.loadPostControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditControl</servlet-name>
+        <servlet-class>Controller.Google.control.EditControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loadPostControl</servlet-name>
+        <url-pattern>/loadPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditControl</servlet-name>
+        <url-pattern>/edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

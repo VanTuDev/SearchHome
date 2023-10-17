@@ -1,7 +1,7 @@
 <%-- 
     Document   : ManagerProduct
-    Created on : Dec 28, 2020, 5:19:02 PM
-    Author     : trinh
+    Created on : Dec 28, 2023, 5:19:02 PM
+    Author     : Alpha
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="css/manager.css" rel="stylesheet" type="text/css"/>
+        <link href="css/Manager.css" rel="stylesheet" type="text/css"/>
         <style>
             img{
                 width: 200px;
@@ -31,11 +31,18 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h2>Manage <b>Product</b></h2>
+                        <div class="back container-fluid">
+                            <button type="button" style="display: flex;align-items: center;border-radius: 5px;background-color: #435d7d;border: 0;font-size: larger;"><a href="home.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="20"
+                                                                                                                                                                                              viewBox="0 0 23 40" fill="none">
+                                    <line x1="1.56548" y1="21.3374" x2="20.7337" y2="1.6064" stroke="white" stroke-width="5" />
+                                    <line x1="1.39361" y1="18.5655" x2="21.1246" y2="37.7337" stroke="white" stroke-width="5" />
+                                    </svg></a></button>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>					
+                            <h2><b>Quản lý bài đăng</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm tài khoản admin</span></a>					
                         </div>
                     </div>
                 </div>
@@ -71,7 +78,7 @@
                                 </td>
                                 <td>${o.price}</td>
                                 <td>
-                                    <a href="#editEmployeeModal"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    <a href="loadPost?pid=${o.id}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="delete?id=${o.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
                             </tr>
@@ -79,19 +86,19 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <div class="hint-text">Showing <b>1</b> out of <b>5</b> entries</div>
                     <ul class="pagination">
                         <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
                         <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
                         <li class="page-item"><a href="#" class="page-link">4</a></li>
                         <li class="page-item"><a href="#" class="page-link">5</a></li>
                         <li class="page-item"><a href="#" class="page-link">Next</a></li>
                     </ul>
                 </div>
             </div>
-            <a href="#"><button type="button" class="btn btn-primary">Back to home</button>
+            <a href="#"><button type="button" class="btn btn-primary">Back to top</button>
 
         </div>
         <!-- Edit Modal HTML -->
@@ -135,7 +142,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="button" class="btn btn-default" data-dismiss="Đăng" value="Cancel">
                             <input type="submit" class="btn btn-success" value="Đăng">
                         </div>
                     </form>

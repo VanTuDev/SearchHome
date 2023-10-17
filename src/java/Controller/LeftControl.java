@@ -1,4 +1,4 @@
-package Controller.Google.control;
+package Controller;
 
 import context.DBContext;
 import entity.Category;

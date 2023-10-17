@@ -1,4 +1,4 @@
-package Controller.Google;
+package google;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

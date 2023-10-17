@@ -327,7 +327,6 @@ public class DAO {
 //            ex.printStackTrace();
 //        }
 //    }
-
 //    public static void main(String[] args) {
 //        DBContext.setConnection();
 //        // Create a Product object with the necessary data
@@ -349,7 +348,6 @@ public class DAO {
 //        System.out.println("Product inserted successfully.");
 //        DBContext.closeConnection();
 //    }
-
     public void createPost(String name, String image, String price, String title, String description, String cateId, String user) {
         String query = "INSERT INTO [Wish].[dbo].[product] \n"
             + "([name],[image],[price],[title],[description],[cateID],[user])\n"
@@ -385,6 +383,7 @@ public class DAO {
 //        }
 //        DBContext.closeConnection();
 //    }
+
     public Product getProductByID(String id) {
 
         String query = "select *from product\n"
@@ -559,6 +558,34 @@ public class DAO {
 //        }
 //    }
     // Đây là hàm checkAccountsExits được đưa vào từ mã trước đó
+   
+
+    public void editPost(String name, String image, String price, String title, String description, String cateId, String id) {
+        String query = "update product \n"
+            + "set \n"
+            + "[name] = ?,\n"
+            + "[image] = ?,\n"
+            + "price = ?,\n"
+            + "title = ?,\n"
+            + "[description] = ?,\n"
+            + "cateID = ?\n"
+            + "where id = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, title);
+            ps.setString(5, description);
+            ps.setString(6, cateId);
+            ps.setString(7, id);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public int singup(Accounts accounts) {
         int listAccounts = 0;
         Connection conn = null;

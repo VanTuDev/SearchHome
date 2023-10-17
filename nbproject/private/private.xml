@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/dao/DAO.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/Google/LoginGoogleHandler.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/control/ManagerControl.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/utlil/Email.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/entity/Category.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/entity/Product.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/control/AddControl.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/web/left.jsp</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/web/footer.jsp</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/web/forgot-password.jsp</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/web/login.jsp</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/web/ManagerProduct.jsp</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/entity/Accounts.java</file>
-            <file>file:/U:/CODE%20CN5/SearchHome/src/java/control/SignUpControl.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
